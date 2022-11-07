@@ -32,8 +32,8 @@ TODO: history viewer + more math functions
 
 ### Links
 
-- Live Site URL: [netlify]()
-- Live Site URL: [gh-pages]()
+- Live Site URL: [netlify](https://serene-fenglisu-912c33.netlify.app/)
+- Live Site URL: [gh-pages](https://mapokes.github.io/Calculator-app/)
 
 ## My process
 
