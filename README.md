@@ -6,7 +6,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -25,7 +25,7 @@ Users are able to:
 
 TODO: history viewer + more math functions
 
-### Screenshot
+### Screenshots
 
 ![screenshots1](https://i.postimg.cc/g0WmbtsW-/1.png)
 ![screenshots2](https://i.postimg.cc/N0kYs8Cr/2.png)
