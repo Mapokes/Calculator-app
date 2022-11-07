@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Calculator app</title>
+  </head>
+  <body id="color-theme-1">
+    <main>
+      <header>
+        <h3>calc</h3>
+        <div id="themes">
+          <label for="theme-slider" id="title">THEME</label>
+          <div id="theme-labels">
+            <label for="theme-checkbox" id="theme-label-1">1</label>
+            <label for="theme-checkbox" id="theme-label-2">2</label>
+            <label for="theme-checkbox" id="theme-label-3">3</label>
+          </div>
+          <div id="theme-slider">
+            <input class="theme-checkbox" type="checkbox" name="theme-checkbox" id="theme-1" />
+            <input class="theme-checkbox" type="checkbox" name="theme-checkbox" id="theme-2" />
+            <input class="theme-checkbox" type="checkbox" name="theme-checkbox" id="theme-3" />
+          </div>
+        </div>
+      </header>
+
+      <section id="calc-result">
+        <span id="history"></span>
+
+        <input disabled type="text" name="calc-result" id="calc-result-input" placeholder="0" />
+      </section>
+
+      <section id="calc-content">
+        <button class="calc-btn calc-btn-num" id="num0"><span>0</span></button>
+        <button class="calc-btn calc-btn-num" id="num1"><span>1</span></button>
+        <button class="calc-btn calc-btn-num" id="num2"><span>2</span></button>
+        <button class="calc-btn calc-btn-num" id="num3"><span>3</span></button>
+        <button class="calc-btn calc-btn-num" id="num4"><span>4</span></button>
+        <button class="calc-btn calc-btn-num" id="num5"><span>5</span></button>
+        <button class="calc-btn calc-btn-num" id="num6"><span>6</span></button>
+        <button class="calc-btn calc-btn-num" id="num7"><span>7</span></button>
+        <button class="calc-btn calc-btn-num" id="num8"><span>8</span></button>
+        <button class="calc-btn calc-btn-num" id="num9"><span>9</span></button>
+        <button class="calc-btn calc-btn-operation" id="addition-btn">
+          <span>+</span>
+        </button>
+        <button class="calc-btn calc-btn-operation" id="subtract-btn">
+          <span>-</span>
+        </button>
+        <button class="calc-btn calc-btn-operation" id="multiply-btn">
+          <span>x</span>
+        </button>
+        <button class="calc-btn calc-btn-operation" id="divide-btn">
+          <span>/</span>
+        </button>
+        <button class="calc-btn calc-btn-operation" id="delete-btn">
+          <span>Backspace</span>
+        </button>
+        <button class="calc-btn calc-btn-num" id="coma-btn">
+          <span>.</span>
+        </button>
+        <button class="calc-btn calc-btn-operation" id="reset-btn">
+          <span>RESET</span>
+        </button>
+        <button class="calc-btn calc-btn-operation" id="enter-btn">
+          <span>=</span>
+        </button>
+      </section>
+    </main>
+    <script src="/main.js"></script>
+  </body>
+</html>

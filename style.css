@@ -1,0 +1,453 @@
+:root {
+  /* ==================== */
+  /* THEME 1              */
+  /* ==================== */
+  /* backgrounds */
+  --bg-main-1: hsl(222, 26%, 31%);
+  --bg-toggle\keypad-1: hsl(223, 31%, 20%);
+  --bg-screen-1: hsl(224, 36%, 15%);
+
+  /* keys */
+  --key-bg-1-darkblue: hsl(225, 21%, 49%);
+  --key-shadow-1-darkblue: hsl(224, 28%, 35%);
+  --key-bg\toggle-1-red: hsl(6, 63%, 50%);
+  --key-shadow-1-darkred: hsl(6, 70%, 34%);
+  --key-bg-1-lightgrey: hsl(30, 25%, 89%);
+  --key-shadow-1-grey: hsl(28, 16%, 65%);
+
+  /* text */
+  --text-1-darkblue: hsl(221, 14%, 31%);
+  --text-1-white: hsl(0, 0%, 100%);
+
+  /* ==================== */
+  /* THEME 2              */
+  /* ==================== */
+  /* backgrounds */
+  --bg-main-2: hsl(0, 0%, 90%);
+  --bg-toggle\keypad-2: hsl(0, 5%, 81%);
+  --bg-screen-2: hsl(0, 0%, 93%);
+
+  /* keys */
+  --key-bg-2-cyan: hsl(185, 42%, 37%);
+  --key-shadow-2-darkcyan: hsl(185, 58%, 25%);
+  --key-bg\toggle-2-orange: hsl(25, 98%, 40%);
+  --key-shadow-2-darkorange: hsl(25, 99%, 27%);
+  --key-bg-2-grey: hsl(45, 7%, 89%);
+  --key-shadow-2-lightgrey: hsl(35, 11%, 61%);
+
+  /* text */
+  --text-2-darkyellow: hsl(60, 10%, 19%);
+  --text-2-white: hsl(0, 0%, 100%);
+
+  /* ==================== */
+  /* THEME 3              */
+  /* ==================== */
+  /* backgrounds */
+  --bg-main-3: hsl(268, 75%, 9%);
+  --bg-toggle\keypad\screen-3: hsl(268, 71%, 12%);
+
+  /* keys */
+  --key-bg-3-lightviolet: hsl(281, 89%, 26%);
+  --key-shadow-3-magenta: hsl(285, 91%, 52%);
+  --key-bg\toggle-3-cyan: hsl(176, 100%, 44%);
+  --key-shadow-3-lightcyan: hsl(177, 92%, 70%);
+  --key-bg-3-verydarkviolet: hsl(268, 47%, 21%);
+  --key-shadow-3-darkmagenta: hsl(290, 70%, 36%);
+
+  /* text */
+  --text-3-yellow: hsl(52, 100%, 62%);
+  --text-3-darkblue: hsl(198, 20%, 13%);
+  --text-3-white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+main {
+  display: grid;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* ==================== */
+/* HEADER               */
+/* ==================== */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+header h3 {
+  font-size: 2rem;
+}
+
+#themes {
+  display: grid;
+  grid-template-areas:
+    ". alias-theme-labels"
+    "alias-title alias-theme-slider";
+}
+
+#theme-labels {
+  grid-area: alias-theme-labels;
+  display: grid;
+  grid-template-areas: "alias-label-1 alias-label-2 alias-label-3";
+}
+
+#theme-labels label {
+  font-size: 0.8rem;
+  justify-self: center;
+  margin-bottom: 5px;
+}
+
+#title {
+  grid-area: alias-title;
+  align-self: end;
+  margin-right: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+#theme-slider {
+  grid-area: alias-theme-slider;
+  display: grid;
+  align-items: center;
+  gap: 5px;
+  grid-template-areas: "alias-theme-1 alias-theme-2 alias-theme-3";
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.theme-checkbox {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: none;
+  appearance: none;
+}
+
+#theme-1 {
+  grid-area: alias-theme-1;
+}
+
+#theme-2 {
+  grid-area: alias-theme-2;
+}
+
+#theme-3 {
+  grid-area: alias-theme-3;
+}
+
+#theme-label-1 {
+  grid-area: alias-label-1;
+}
+
+#theme-label-2 {
+  grid-area: alias-label-2;
+}
+
+#theme-label-3 {
+  grid-area: alias-label-3;
+}
+
+/* ==================== */
+/* CALC RESULT          */
+/* ==================== */
+
+#calc-result {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+#calc-result-input {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: right;
+  font-size: 2.5rem;
+}
+
+#history {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  opacity: 0.8;
+}
+
+/* ==================== */
+/* CALC CONTENT         */
+/* ==================== */
+
+#calc-content {
+  display: grid;
+  grid-template-rows: repeat(5, 3.5rem);
+  grid-template-columns: repeat(4, minmax(3.5rem, 6rem));
+  grid-template-areas:
+    "alias-num-7 alias-num-8 alias-num-9 alias-num-delete"
+    "alias-num-4 alias-num-5 alias-num-6 alias-num-addition"
+    "alias-num-1 alias-num-2 alias-num-3 alias-num-subtract"
+    "alias-num-coma alias-num-0 alias-num-divide alias-num-multiply"
+    "alias-num-reset alias-num-reset alias-num-enter alias-num-enter";
+  gap: 10px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.calc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+
+.calc-btn span {
+  height: 2rem;
+}
+
+#delete-btn span,
+#reset-btn span,
+#enter-btn span {
+  height: auto;
+}
+
+#num0 {
+  grid-area: alias-num-0;
+}
+
+#num1 {
+  grid-area: alias-num-1;
+}
+
+#num2 {
+  grid-area: alias-num-2;
+}
+#num3 {
+  grid-area: alias-num-3;
+}
+#num4 {
+  grid-area: alias-num-4;
+}
+#num5 {
+  grid-area: alias-num-5;
+}
+#num6 {
+  grid-area: alias-num-6;
+}
+#num7 {
+  grid-area: alias-num-7;
+}
+#num8 {
+  grid-area: alias-num-8;
+}
+#num9 {
+  grid-area: alias-num-9;
+}
+#addition-btn {
+  grid-area: alias-num-addition;
+}
+#subtract-btn {
+  grid-area: alias-num-subtract;
+}
+#multiply-btn {
+  grid-area: alias-num-multiply;
+}
+#divide-btn {
+  grid-area: alias-num-divide;
+}
+#delete-btn {
+  grid-area: alias-num-delete;
+  font-size: 1rem;
+}
+#coma-btn {
+  grid-area: alias-num-coma;
+}
+#reset-btn {
+  grid-area: alias-num-reset;
+  font-size: 1rem;
+}
+#enter-btn {
+  grid-area: alias-num-enter;
+  font-size: 1rem;
+}
+
+/* ==================== */
+/* THEME STYLES         */
+/* ==================== */
+
+/* =============== */
+/* THEME-1         */
+/* =============== */
+
+#color-theme-1 {
+  background-color: var(--bg-main-1);
+}
+
+#color-theme-1 h3,
+#color-theme-1 label,
+#color-theme-1 #delete-btn,
+#color-theme-1 #reset-btn,
+#color-theme-1 #enter-btn,
+#color-theme-1 #calc-result-input,
+#color-theme-1 #history {
+  color: var(--text-1-white);
+}
+
+#color-theme-1 #theme-1 #color-theme-1 .calc-btn {
+  background-color: var(--key-bg-1-lightgrey);
+  color: var(--text-1-darkblue);
+}
+
+#color-theme-1 #calc-result {
+  background-color: var(--bg-screen-1);
+}
+
+#color-theme-1 #calc-content,
+#color-theme-1 #theme-slider {
+  background-color: var(--bg-toggle\keypad-1);
+}
+
+.theme-checkbox:hover,
+.calc-btn:hover {
+  cursor: pointer;
+  filter: brightness(130%);
+}
+
+#color-theme-1 .theme-checkbox:checked {
+  background-color: var(--key-bg\toggle-1-red);
+}
+
+#color-theme-1 .calc-btn {
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-1-grey);
+}
+
+#color-theme-1 #delete-btn,
+#color-theme-1 #reset-btn {
+  background-color: var(--key-bg-1-darkblue);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-1-darkblue);
+}
+
+#color-theme-1 #enter-btn {
+  background-color: var(--key-bg\toggle-1-red);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-1-darkred);
+}
+
+/* =============== */
+/* THEME-2         */
+/* =============== */
+
+#color-theme-2 {
+  background-color: var(--bg-main-2);
+}
+
+#color-theme-2 h3,
+#color-theme-2 label,
+#color-theme-2 #calc-result-input,
+#color-theme-2 #history {
+  color: var(--text-2-darkyellow);
+}
+
+#color-theme-2 .calc-btn {
+  background-color: var(--key-bg-2-grey);
+  color: var(--text-2-darkyellow);
+}
+
+#color-theme-2 #calc-result {
+  background-color: var(--bg-screen-2);
+}
+
+#color-theme-2 #calc-content,
+#color-theme-2 #theme-slider {
+  background-color: var(--bg-toggle\keypad-2);
+}
+
+#color-theme-2 .theme-checkbox:checked {
+  background-color: var(--key-bg\toggle-2-orange);
+}
+
+#color-theme-2 .calc-btn {
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-2-lightgrey);
+}
+
+#color-theme-2 #delete-btn,
+#color-theme-2 #reset-btn {
+  background-color: var(--key-bg-2-cyan);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-2-darkcyan);
+  color: var(--text-2-white);
+}
+
+#color-theme-2 #enter-btn {
+  background-color: var(--key-bg\toggle-2-orange);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-2-darkorange);
+  color: var(--text-2-white);
+}
+
+/* =============== */
+/* THEME-3         */
+/* =============== */
+
+#color-theme-3 {
+  background-color: var(--bg-main-3);
+}
+
+#color-theme-3 h3,
+#color-theme-3 label,
+#color-theme-3 #calc-result-input,
+#color-theme-3 #history {
+  color: var(--text-3-yellow);
+}
+
+#color-theme-3 .calc-btn {
+  background-color: var(--key-bg-3-verydarkviolet);
+  color: var(--text-3-yellow);
+}
+
+#color-theme-3 #calc-result {
+  background-color: var(--bg-toggle\keypad\screen-3);
+}
+
+#color-theme-3 #calc-content,
+#color-theme-3 #theme-slider {
+  background-color: var(--bg-toggle\keypad\screen-3);
+}
+
+#color-theme-3 .theme-checkbox:checked {
+  background-color: var(--key-bg\toggle-3-cyan);
+}
+
+#color-theme-3 .calc-btn {
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-3-darkmagenta);
+}
+
+#color-theme-3 #delete-btn,
+#color-theme-3 #reset-btn {
+  background-color: var(--key-bg-3-lightviolet);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-3-magenta);
+  color: var(--text-2-white);
+}
+
+#color-theme-3 #enter-btn {
+  background-color: var(--key-bg\toggle-3-cyan);
+  box-shadow: 0px 3px 0px 0px var(--key-shadow-3-lightcyan);
+  color: var(--text-3-darkblue);
+}
